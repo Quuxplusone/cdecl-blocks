@@ -25,6 +25,7 @@ explain int *x(int)
 explain const int x
 explain int const x
 # test some casts
+cast x to int
 cast x into pointer to char
 cast x into pointer to member of class X int
 cast x into pointer to func ret int

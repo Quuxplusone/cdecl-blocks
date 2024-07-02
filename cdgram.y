@@ -65,7 +65,7 @@ stmt		: HELP NL
 			dodeclare(NullCP, $2, $3.left, $3.right, $3.type);
 			}
 
-		| CAST NAME INTO adecl NL
+		| CAST NAME into_or_to adecl NL
 			{
 			Debug((stderr, "stmt: CAST NAME AS adecl\n"));
 			Debug((stderr, "\tNAME='%s'\n", $2));
@@ -942,5 +942,9 @@ opt_storage	: storage
 			Debug((stderr, "opt_storage: EMPTY\n"));
 			$$ = ds("");
 			}
+		;
+
+into_or_to	: INTO
+		| TO
 		;
 %%
